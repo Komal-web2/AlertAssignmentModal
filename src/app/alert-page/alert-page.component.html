@@ -1,0 +1,197 @@
+<div class="main-header navbar-fixed-top">
+    <div class="container">
+    <div class="header-mobile-nav-wrapper">
+       <div class="row">
+          <div class="col-lg-12">
+            <div class="col-lg-6">
+             <p>Alert</p>  
+            </div> 
+            <div class="col-lg-6">
+             <!-- <a href=""><span class="fa fa-times-circle"></span></a> -->
+             <mat-icon class="icon">highlight_off</mat-icon>
+            </div>
+          </div>
+       </div>
+    </div>
+    <div class="header-menu">
+        <div class="header-nav-wrapper" style="width:68%;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="header-nav nav">
+                        <li class="header-nav-item" style="margin-left: 197px;">
+                            <a routerLink="../category">Immunization Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">Lab Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">DI Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">Procedure Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">RX Specific Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">DX Specific Alert</a>
+                        </li>
+                        <li class="header-nav-item">
+                            <a routerLink="../category">Patient Specific Alert</a>
+                        </li>
+                    </ul>
+              </div>
+            </div>
+        </div>    
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8 col-md-6 col-lg-7" style="background-color:#dcdcdc2e;">
+            <mat-icon class="ico"> clear_all</mat-icon><p class="text">Rx Specific Alerts</p>
+                <!-- <form id="formM" (ngSubmit)="onSubmit()" [formGroup]="addNewItem" style="margin-bottom: 8px;"> -->
+                    <div class="row" style="margin-bottom: 8px;">
+                        <div class="col-md-6">
+                            <div class="col-md-1">
+                               <p style="color: black;">Find</p>
+                            </div>
+                            &nbsp;
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="nameuser" name="nameuser" required="">
+                                <!-- <div *ngIf="submitted && fval.nameuser.errors" class="invalid-feedback">
+                                    <div *ngIf="fval.nameuser.errors.required">
+                                        Name is required.
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-md-4" style="margin-left: 45%;">
+                                <button type="text" (click)="removeFromCart(i)" style="margin-left: 32px;border: outset;">Delete</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="text" style="border: outset;" (click)="addToCart(items)">New</button>
+                            </div>
+                        </div>
+                    </div>  
+                <!-- </form> -->
+                <div class="row">
+                    <div class="container">
+                        <table class="table table-bordered">
+                            <thead style="background-color: #d5e7ecf5;">
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Web Reference</th>
+                                </tr>
+                            </thead>
+                            <tbody style="background-color: white">
+                                <tr *ngFor="let product of items;let i = index">
+                                    <td><input type="checkbox"></td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.description}}</td>
+                                    <td>{{product.webreference}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+                <div class="row">
+                    <mat-paginator [length] = "100"
+                        [pageSize] = "10"
+                        [pageSizeOptions] = "[5, 10, 25, 100]"
+                        (page) = "pageEvent = $event">
+                    </mat-paginator>
+              </div>
+          </div>
+          <div class="col-sm-4 col-md-6 col-lg-5" style="background-color:#91d7f761;">
+            <!-- <form id="formM" (ngSubmit)="onSubmit()" [formGroup]="NewItem">    -->
+                <div class="row" style="padding-top: 10px;">
+                    <div class="col-md-8">
+                        <div class="col-md-3">
+                           <p style="color: black;">Name</p>
+                        </div>
+                        &nbsp;
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding-left: 91px;">
+                            <button type="submit" style="border: outset;">Sel</button>
+                    </div>
+                </div>  
+                <div class="row" style="padding-top: 10px;">
+                    <div class="col-md-6">
+                           <p style="color: black;padding-left: 15px;">Description</p>
+                    </div>
+                    <div class="col-md-6">
+                        <textarea class="form-control desc" id="Description" name="Description" required=""></textarea>
+                    </div>
+                </div> 
+                <div class="row" style="padding-top: 10px;">
+                    <div class="col-md-6">
+                           <p style="color: black;padding-left: 15px;">Order Set</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            <input type="text" class="form-control des" id="Order" name="Order" required="">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text"  class="form-control" style="margin-left: 19px;width: 40px;" placeholder="...">
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2"> <input type="checkbox" style=" margin-left: 25px;"></div>
+                    <div class="col-md-7"><p class="para"><b>Apply Alert to all the Medications in the same class</b></p></div>
+                </div> 
+                <div class="row" style="padding-bottom: 10px;">
+                    <button type="submit"  class="btn1">New</button>
+                </div> 
+                <div class="row">
+                    <div class="container">
+                    <table class="table table-bordered">
+                        <thead style="background-color: #d5e7ecf5;">
+                            <tr>
+                                <th>Test</th>
+                                <th>Type</th>
+                                <th>Frequency</th>
+                                <th>Web Reference</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody style="background-color: white">
+                            <tr *ngFor="let datauser of datausers;let i = index">
+                                <td>{{datauser.test}}</td>
+                                <td>{{datauser.type}}</td>
+                                <td>{{datauser.frequency}}</td>
+                                <td>{{datauser.webreference}}</td>
+                                <td><div class="row">
+                                    <div class="col-lg-6" style="margin-left: -4px;"><a href=""><span class="fa fa-pencil"></span></a></div>
+                                    <div class="col-lg-6" style="margin-left: inherit;"><a href=""><span class="fa fa-close"></span></a></div>
+                                </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> 
+            </div>
+            <div class="row" style="padding-bottom: 10px;">
+                <div class="col-md-6"></div>
+                <div class="col-md-3" style=" padding-left: 100px;"><button type="submit" class="btn2">Cancel</button></div>
+                <div class="col-md-3" style="padding-left: 62px;"> <button type="submit" class="btn3">OK</button></div>
+            </div> 
+            <!-- </form> -->
+          </div>
+        </div>
+    </div>
+    <!-- <mat-grid-list cols = "2" rowHeight = "100px">
+        <mat-grid-tile style="background-color: #dcdcdc2e;">
+            <mat-icon class="ico"> clear_all</mat-icon>&nbsp;<p class="text">Rx Specific Alerts</p>
+        </mat-grid-tile>
+        <mat-grid-tile style="background-color: #91d7f761;">Tile 2 </mat-grid-tile>
+     </mat-grid-list> -->
+     
+</div>
+</div>

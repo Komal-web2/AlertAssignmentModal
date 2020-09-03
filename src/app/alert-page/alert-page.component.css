@@ -1,0 +1,55 @@
+.header-mobile-nav-wrapper{
+   background-color: #6fb7f1;
+   height: 25px;
+}
+p{
+   color: white;
+}
+.icon{
+   float: right;
+    padding: 2px 0px;
+    font-size: 20px;
+    color: white;
+}
+.header-nav-item{
+   display: inline-grid;
+}
+.text{
+   color: #6fb7f1;
+   margin-left: 27px;
+    margin-top: -33px;
+}
+.ico{
+   margin-bottom: 10px;
+   color: #6fb7f1;
+}
+.form-control{
+   width: 213px;
+   margin-left: 51px;
+}
+.desc{
+   margin-left: -94px;
+   width: 300px;
+}
+.des{
+   margin-left: -108px;
+   width: 186px;
+}
+.para{
+   margin-left: -30px;
+    color: black;
+}
+.btn1{
+   margin-left: 397px;
+   margin-top: -10px;
+   border: outset;
+}
+.fa{
+   color: black;
+}
+.btn2{
+   border: outset;
+}
+.btn3{
+   border: outset;
+}
